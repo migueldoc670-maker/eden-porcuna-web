@@ -40,8 +40,9 @@ const CONFIG = {
     keywords:
       "Eden Porcuna, cafeteria Porcuna, desayunos Porcuna, meriendas Porcuna, copas Porcuna, bar en Porcuna Jaén",
     // URL final donde estará publicada la web (para etiquetas canonical/OG)
-    // TODO: actualizar con la URL real una vez publicada la web
-    siteUrl: "https://www.edenporcuna.es",
+    // TODO: si el negocio compra un dominio propio (ej. edenporcuna.es),
+    // actualizar aquí y configurarlo en GitHub Pages
+    siteUrl: "https://migueldoc670-maker.github.io/eden-porcuna-web",
     // Imagen para compartir en redes sociales (WhatsApp, Facebook...) 1200x630 recomendado
     ogImage: "assets/img/og-image.jpg",
   },
