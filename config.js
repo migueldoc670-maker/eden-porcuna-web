@@ -110,7 +110,8 @@ const CONFIG = {
       {
         slug: "desayunos",
         name: "Desayunos",
-        image: "assets/img/menu-desayunos.svg", // TODO: sustituir por foto real
+        // TODO: cuando el cliente tenga fotos propias, sustituir por esas
+        image: "assets/img/menu-desayunos.jpg", // foto libre de derechos (Unsplash)
         comingSoon: true,
         items: [
           // { name: "Tostada con AOVE", description: "Pan de pueblo, tomate y aceite", price: "2,50 €" },
@@ -119,7 +120,7 @@ const CONFIG = {
       {
         slug: "meriendas",
         name: "Meriendas",
-        image: "assets/img/menu-meriendas.svg", // TODO: sustituir por foto real
+        image: "assets/img/menu-meriendas.jpg", // foto libre de derechos (Unsplash)
         comingSoon: true,
         items: [
           // { name: "Tarta de queso", description: "Con coulis de frutos rojos", price: "3,80 €" },
@@ -128,7 +129,7 @@ const CONFIG = {
       {
         slug: "copas",
         name: "Copas",
-        image: "assets/img/menu-copas.svg", // TODO: sustituir por foto real
+        image: "assets/img/menu-copas.jpg", // foto libre de derechos (Unsplash)
         comingSoon: true,
         items: [
           // { name: "Gin Tonic", description: "A elegir ginebra", price: "6,00 €" },
