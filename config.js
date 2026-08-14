@@ -166,7 +166,7 @@ const CONFIG = {
     // Deja "" en cualquier red que el negocio no tenga y desaparece sola
     social: {
       instagram: "https://instagram.com/eden.porcuna",
-      facebook: "",
+      facebook: "https://www.facebook.com/Eden.carrera.porcuna/",
       tiktok: "",
       x: "",
     },
