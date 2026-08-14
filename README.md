@@ -37,6 +37,18 @@ plantilla-negocios-porcuna/
 4. Abre `index.html` en el navegador (doble clic) para comprobar que todo
    se ve bien. No hace falta servidor ni build: es HTML estático puro.
 
+### ⚠️ Después de publicar cambios, sube el número de versión
+
+`index.html` y `carta.html` cargan `config.js`, `styles.css`, `main.js` y
+`carta.js` con un `?v=4` al final (ej. `config.js?v=4`). Ese número existe
+solo para que el navegador de los clientes no se quede con una copia
+antigua guardada en caché cuando publiques un cambio (por ejemplo, si
+cambias una foto pero sigue saliendo la vieja).
+
+**Cada vez que subas cambios a `config.js` o a cualquier otro archivo**,
+sube ese número en los dos `.html` (`v=4` → `v=5` → `v=6`...). Si no lo
+subes, algunos visitantes pueden tardar en ver el cambio.
+
 No debería ser necesario tocar `index.html`, `styles.css` ni `main.js`
 salvo que quieras cambiar el diseño base de la plantilla para todos los
 clientes a la vez.

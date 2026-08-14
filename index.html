@@ -22,10 +22,13 @@
 <meta property="og:locale" content="es_ES">
 
 <link rel="icon" id="favicon-link" href="assets/img/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="assets/css/styles.css">
+<!-- El "?v=" al final evita que el navegador use una copia antigua en
+     caché cuando se actualiza config.js o cualquier otro archivo. Súbelo
+     (v=5, v=6...) cada vez que publiques cambios. -->
+<link rel="stylesheet" href="assets/css/styles.css?v=4">
 
 <!-- config.js se carga primero: contiene TODOS los datos personalizables -->
-<script src="config.js"></script>
+<script src="config.js?v=4"></script>
 </head>
 <body>
 
@@ -173,6 +176,6 @@
   </svg>
 </a>
 
-<script defer src="assets/js/main.js"></script>
+<script defer src="assets/js/main.js?v=4"></script>
 </body>
 </html>
