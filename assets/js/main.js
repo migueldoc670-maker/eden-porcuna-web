@@ -152,7 +152,7 @@
     var cta = $("hero-cta");
     if (hero.ctaText) {
       cta.textContent = hero.ctaText;
-      cta.href = hero.ctaLink || "#servicios";
+      cta.href = hero.ctaLink || "carta.html";
     } else {
       cta.hidden = true;
     }
@@ -174,54 +174,48 @@
   }
 
   /* ---------------------------------------------------------
-     5. SERVICIOS / MENÚ
+     5. SERVICIOS / MENÚ (avance en la portada)
   --------------------------------------------------------- */
+  // La carta completa vive en carta.html. Aquí solo se muestra un avance:
+  // una tarjeta por categoría que enlaza directo a carta.html#<slug>.
   function renderServices() {
     var section = CONFIG.servicesSection || {};
     $("services-title").textContent = section.sectionTitle || "Servicios";
     $("services-subtitle").textContent = section.sectionSubtitle || "";
 
-    var wrap = $("services-categories");
+    var wrap = $("services-grid");
     wrap.innerHTML = "";
 
     (section.categories || []).forEach(function (cat) {
-      var block = document.createElement("div");
-      block.className = "category-block";
+      var card = document.createElement("a");
+      card.className = "menu-card";
+      card.href = "carta.html#" + (cat.slug || "");
 
-      var h3 = document.createElement("h3");
-      h3.textContent = cat.name || "";
-      block.appendChild(h3);
+      var imgWrap = document.createElement("div");
+      imgWrap.className = "menu-card-image";
+      if (cat.image) {
+        var img = document.createElement("img");
+        img.src = cat.image;
+        img.alt = cat.name || "";
+        img.loading = "lazy";
+        imgWrap.appendChild(img);
+      }
+      card.appendChild(imgWrap);
 
-      (cat.items || []).forEach(function (item) {
-        var row = document.createElement("div");
-        row.className = "service-item";
+      var name = document.createElement("span");
+      name.className = "menu-card-name";
+      name.textContent = cat.name || "";
+      card.appendChild(name);
 
-        var main = document.createElement("div");
-        main.className = "service-main";
-        var name = document.createElement("div");
-        name.className = "service-name";
-        name.textContent = item.name || "";
-        main.appendChild(name);
-        if (item.description) {
-          var desc = document.createElement("div");
-          desc.className = "service-description";
-          desc.textContent = item.description;
-          main.appendChild(desc);
-        }
-        row.appendChild(main);
-
-        if (item.price) {
-          var price = document.createElement("div");
-          price.className = "service-price";
-          price.textContent = item.price;
-          row.appendChild(price);
-        }
-
-        block.appendChild(row);
-      });
-
-      wrap.appendChild(block);
+      wrap.appendChild(card);
     });
+
+    var viewAll = $("services-viewall");
+    if (section.viewAllText) {
+      viewAll.textContent = section.viewAllText;
+    } else {
+      viewAll.hidden = true;
+    }
   }
 
   /* ---------------------------------------------------------
@@ -366,7 +360,7 @@
     var selectors = [
       ".section h2",
       ".section-subtitle",
-      ".category-block",
+      ".menu-card",
       ".schedule-table",
       ".schedule-note",
       ".map-wrap",

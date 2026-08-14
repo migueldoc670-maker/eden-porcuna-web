@@ -86,7 +86,7 @@ const CONFIG = {
     title: "Edén Porcuna",
     subtitle: "Desayunos, meriendas y copas en el centro de Porcuna",
     ctaText: "Ver Carta",
-    ctaLink: "#servicios",
+    ctaLink: "carta.html",
     ctaSecondaryText: "Cómo llegar",
     ctaSecondaryLink: "#ubicacion",
   },
@@ -94,29 +94,44 @@ const CONFIG = {
   // ------------------------------------------------------------
   // 6. SERVICIOS / MENÚ
   // ------------------------------------------------------------
-  // sectionTitle: cambia a "Nuestra Carta", "Servicios", "Nuestros Cortes", etc.
+  // La carta vive en su propia página (carta.html): pulsar "Carta" en el
+  // menú, en el botón del inicio o en cualquier tarjeta de categoría lleva
+  // directamente allí. Cada categoría es "una página" dentro de esa carta
+  // (carta.html#slug) con su propia lista de platos/bebidas.
   servicesSection: {
     sectionTitle: "Nuestra Carta",
     sectionSubtitle: "Desayunos, meriendas y copas en Porcuna",
-    // Agrupa en categorías (Desayunos, Meriendas, Copas...) o deja una sola categoría
-    // TODO: sustituir por los platos/bebidas y precios reales del Bar Edén
+    viewAllText: "Ver carta completa",
+    // TODO: sustituir por los platos/bebidas y precios reales de Edén Porcuna.
+    // Mientras una categoría tenga comingSoon: true, esa página de la carta
+    // muestra un aviso de "carta en preparación" en vez de platos inventados.
+    // Cuando tengas los datos reales: rellena "items" y pon comingSoon: false.
     categories: [
       {
+        slug: "desayunos",
         name: "Desayunos",
+        image: "assets/img/menu-desayunos.svg", // TODO: sustituir por foto real
+        comingSoon: true,
         items: [
-          { name: "Carta pendiente de confirmar con el cliente", description: "", price: "" },
+          // { name: "Tostada con AOVE", description: "Pan de pueblo, tomate y aceite", price: "2,50 €" },
         ],
       },
       {
+        slug: "meriendas",
         name: "Meriendas",
+        image: "assets/img/menu-meriendas.svg", // TODO: sustituir por foto real
+        comingSoon: true,
         items: [
-          { name: "Carta pendiente de confirmar con el cliente", description: "", price: "" },
+          // { name: "Tarta de queso", description: "Con coulis de frutos rojos", price: "3,80 €" },
         ],
       },
       {
+        slug: "copas",
         name: "Copas",
+        image: "assets/img/menu-copas.svg", // TODO: sustituir por foto real
+        comingSoon: true,
         items: [
-          { name: "Carta pendiente de confirmar con el cliente", description: "", price: "" },
+          // { name: "Gin Tonic", description: "A elegir ginebra", price: "6,00 €" },
         ],
       },
     ],
