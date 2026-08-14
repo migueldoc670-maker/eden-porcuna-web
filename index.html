@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ===================================================================
+     SEO: título y meta description por defecto (fallback si JS no carga).
+     El script de abajo los sobreescribe al vuelo con los datos de config.js
+     para que coincidan siempre con el negocio activo.
+==================================================================== -->
+<title>Cargando...</title>
+<meta name="description" content="">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="">
+
+<!-- Open Graph / redes sociales (WhatsApp, Facebook...) -->
+<meta property="og:type" content="business.business">
+<meta property="og:title" content="">
+<meta property="og:description" content="">
+<meta property="og:image" content="">
+<meta property="og:locale" content="es_ES">
+
+<link rel="icon" id="favicon-link" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/styles.css">
+
+<!-- config.js se carga primero: contiene TODOS los datos personalizables -->
+<script src="config.js"></script>
+</head>
+<body>
+
+<!-- ===================================================================
+     HEADER / NAV
+==================================================================== -->
+<header class="site-header" id="inicio">
+  <div class="container header-inner">
+    <a href="#inicio" class="brand" id="brand-logo-wrap">
+      <img id="brand-logo" src="" alt="" class="brand-logo" hidden>
+      <span id="brand-name" class="brand-name"></span>
+    </a>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="siteNav">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="site-nav" id="siteNav">
+      <a href="#inicio">Inicio</a>
+      <a href="#servicios" id="nav-servicios-link">Carta</a>
+      <a href="#horario">Horario</a>
+      <a href="#ubicacion">Ubicación</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- =================================================================
+       HERO
+  ================================================================== -->
+  <section class="hero" id="hero">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <h1 id="hero-title"></h1>
+      <p class="hero-subtitle" id="hero-subtitle"></p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" id="hero-cta" href="#servicios"></a>
+        <a class="btn btn-outline" id="hero-cta-secondary" href="#ubicacion"></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================================================================
+       SERVICIOS / MENÚ
+  ================================================================== -->
+  <section class="section" id="servicios">
+    <div class="container">
+      <h2 id="services-title"></h2>
+      <p class="section-subtitle" id="services-subtitle"></p>
+      <div id="services-categories" class="categories"></div>
+    </div>
+  </section>
+
+  <!-- =================================================================
+       HORARIO
+  ================================================================== -->
+  <section class="section section-alt" id="horario">
+    <div class="container">
+      <h2 id="schedule-title"></h2>
+      <table class="schedule-table" id="schedule-table" aria-label="Horario de apertura">
+        <tbody id="schedule-body"></tbody>
+      </table>
+      <p class="schedule-note" id="schedule-note"></p>
+    </div>
+  </section>
+
+  <!-- =================================================================
+       UBICACIÓN
+  ================================================================== -->
+  <section class="section" id="ubicacion">
+    <div class="container">
+      <h2 id="location-title"></h2>
+      <div class="location-grid">
+        <div class="map-wrap">
+          <iframe
+            id="map-embed"
+            src=""
+            width="100%"
+            height="350"
+            style="border:0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Mapa de ubicación">
+          </iframe>
+        </div>
+        <div class="location-info">
+          <p id="location-address"></p>
+          <a class="btn btn-primary" id="location-directions-btn" href="" target="_blank" rel="noopener">Cómo llegar</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================================================================
+       CONTACTO
+  ================================================================== -->
+  <section class="section section-alt" id="contacto">
+    <div class="container">
+      <h2>Contacto</h2>
+      <div class="contact-grid">
+        <a class="contact-card" id="contact-phone" href="">
+          <span class="contact-icon" aria-hidden="true">☎</span>
+          <span>Llamar</span>
+          <strong id="contact-phone-text"></strong>
+        </a>
+        <a class="contact-card" id="contact-whatsapp" href="" target="_blank" rel="noopener">
+          <span class="contact-icon" aria-hidden="true">💬</span>
+          <span>WhatsApp</span>
+          <strong>Escríbenos</strong>
+        </a>
+        <a class="contact-card" id="contact-email" href="">
+          <span class="contact-icon" aria-hidden="true">✉</span>
+          <span>Email</span>
+          <strong id="contact-email-text"></strong>
+        </a>
+      </div>
+      <div class="social-links" id="social-links"></div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===================================================================
+     FOOTER
+==================================================================== -->
+<footer class="site-footer">
+  <div class="container">
+    <p id="footer-text"></p>
+    <p class="footer-credit" id="footer-credit"></p>
+  </div>
+</footer>
+
+<!-- ===================================================================
+     BOTÓN FLOTANTE DE WHATSAPP (siempre visible)
+==================================================================== -->
+<a id="whatsapp-float" class="whatsapp-float" href="" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
+  <svg viewBox="0 0 32 32" width="30" height="30" fill="currentColor" aria-hidden="true">
+    <path d="M16.001 3C9.373 3 4 8.373 4 15c0 2.386.697 4.61 1.902 6.484L4 29l7.72-1.865A11.94 11.94 0 0 0 16.001 27C22.628 27 28 21.627 28 15S22.628 3 16.001 3zm0 21.75c-2.02 0-3.897-.59-5.48-1.606l-.393-.243-4.58 1.106 1.128-4.462-.257-.406A9.72 9.72 0 0 1 5.25 15c0-5.936 4.815-10.75 10.751-10.75S26.752 9.064 26.752 15 21.937 24.75 16.001 24.75zm5.981-8.15c-.328-.164-1.94-.957-2.24-1.066-.301-.109-.52-.164-.739.164-.219.328-.848 1.066-1.04 1.285-.191.219-.383.246-.71.082-.328-.164-1.386-.511-2.64-1.63-.976-.871-1.635-1.947-1.827-2.275-.191-.328-.02-.505.144-.668.148-.147.328-.383.492-.574.164-.191.219-.328.328-.547.109-.219.055-.41-.027-.574-.082-.164-.739-1.782-1.012-2.44-.267-.64-.538-.553-.739-.563l-.63-.011c-.219 0-.574.082-.874.41-.301.328-1.148 1.122-1.148 2.738 0 1.616 1.175 3.177 1.339 3.396.164.219 2.312 3.53 5.604 4.949.783.338 1.394.54 1.87.691.786.25 1.501.215 2.066.13.63-.094 1.94-.793 2.213-1.559.273-.766.273-1.422.191-1.559-.082-.137-.301-.219-.629-.383z"/>
+  </svg>
+</a>
+
+<script defer src="assets/js/main.js"></script>
+</body>
+</html>
