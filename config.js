@@ -178,7 +178,8 @@ const CONFIG = {
   footer: {
     text: "Edén Porcuna — Porcuna, Jaén",
     showCredit: true, // muestra "Web creada por..." — pon false para ocultarlo
-    creditText: "Web creada por [Tu Nombre / Tu Marca]",
-    creditLink: "https://tusitio.com",
+    creditText: "Web creada por Clout",
+    // TODO: poner aquí la URL de Clout si tiene web, para que el texto enlace
+    creditLink: "",
   },
 };
